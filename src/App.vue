@@ -1,28 +1,18 @@
-<script setup>
-  import Navbar from './components/Navbar.vue';
-</script>
-
 <template>
-  <Navbar/>
-  <transition name="fade">
-    <router-view/>
-  </transition>
+   <div>
+     <p>
+        <router-link to="/Account/Login">Login</router-link>
+        &nbsp;
+        <router-link to="/">Default</router-link>
+          &nbsp;
+        <router-link to="/Client/Start">Client</router-link>
+     </p>
+  </div>
+  <component :is="$route.meta.layout || 'div'"></component>
 </template>
+<script>
 
-<style>
-.fade-enter-active,
-.fade-leave-active {
-  transition-property: opacity;
-  transition-duration: 1s;
+export default {
+  name: 'App',
 }
-
-.fade-enter-active {
-  transition-delay: 1s;
-}
-
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
-}
-
-</style>
+</script>
