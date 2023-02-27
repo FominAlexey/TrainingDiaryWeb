@@ -4,12 +4,15 @@ export default {
 
         Login: "/Account/Login",
         Register: "/Account/Register",
-        ForgotPassword: "/Account/Forgot/Password",
-        ResetPassword: "/Account/NewPassword"
+        RegisterAppData: "/Account/RegisterAppData",    
     },
     
     Client: {
-        Start: "/Client/Start",
+        Main: "/Client/Main",
+        Exercises: "/Client/Exercises",
+        Training: "/Client/Training",
+        Statistics: "/Client/Statistics",
+        Profile: "/Client/Profile",
     },
 
 }

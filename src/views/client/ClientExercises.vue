@@ -1,5 +1,5 @@
 <template>
-    <div>Првиет Клиент</div>
+    <div>Упражения</div>
 </template>
     
 <script setup lang='ts'>
