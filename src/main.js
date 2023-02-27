@@ -5,6 +5,8 @@ import router from './router/index'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 import "bootstrap/dist/js/bootstrap.js"
 import "bootstrap/dist/css/bootstrap.css"
 

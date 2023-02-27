@@ -6,6 +6,8 @@ import Exercises from "/src/views/client/ClientExercises.vue"
 import Training from "/src/views/client/ClientTraining.vue"
 import Statistics from "/src/views/client/ClientStatistics.vue"
 import Profile from "/src/views/client/ClientProfile.vue"
+import Workout from "/src/views/client/Training/PageTraining.vue"
+import Exercise from "/src/views/client/Training/PageExercise.vue"
 
 import ClientLayout from '/src/layouts/ClientLayout.vue'
 
@@ -63,6 +65,24 @@ export default [
         meta: {
             layout: ClientLayout,
             title: "Профиль"
+        }
+    },
+    {
+        path: AllRoutes.Client.Workout,
+        component: Workout,
+        beforeEnter: ifAuthenticated,
+        meta: {
+            layout: ClientLayout,
+            title: "Тренировка"
+        }
+    },
+    {
+        path: AllRoutes.Client.Exercise,
+        component: Exercise,
+        beforeEnter: ifAuthenticated,
+        meta: {
+            layout: ClientLayout,
+            title: "Упражнение"
         }
     },
 

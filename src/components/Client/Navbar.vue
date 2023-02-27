@@ -20,7 +20,9 @@
           <router-link class="nav-link active" to="/Client/Statistics">Статистика</router-link>
         </li>
       </ul>
-      <router-link class="navbar-brand d-flex" to="/Client/Profile">Профиль</router-link>
+      <router-link class="navbar-brand d-flex" to="/Client/Profile">
+        <i class="bi bi-gear-fill navbar-brand d-flex"></i>
+      </router-link>
     </div>
   </div>
 </nav>

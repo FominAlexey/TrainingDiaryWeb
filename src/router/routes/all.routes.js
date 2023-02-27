@@ -13,6 +13,8 @@ export default {
         Training: "/Client/Training",
         Statistics: "/Client/Statistics",
         Profile: "/Client/Profile",
+        Workout: "/Client/Workout",
+        Exercise: "/Client/Exercise",
     },
 
 }
