@@ -9,7 +9,7 @@ import Profile from "/src/views/client/ClientProfile.vue"
 import Workout from "/src/views/client/Training/PageTraining.vue"
 import Exercise from "/src/views/client/Training/PageExercise.vue"
 
-import ClientLayout from '/src/layouts/ClientLayout.vue'
+import ClientLayout from '/src/layouts/clientLayout.vue'
 
 const ifAuthenticated = (to, from, next) => {
 
