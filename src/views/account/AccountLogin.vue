@@ -1,12 +1,12 @@
 <template> 
     <div>Diary Work</div>
     <div class="input-group-login mt-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Логин</span>
-        <input type="text" class="form-control flex-grow-0 w-25" aria-label="default input example">
+        <span class="input-group-text" id="inputGroup-sizing-default" >Логин</span>
+        <input type="text" class="form-control flex-grow-0 w-25" aria-label="default input example" v-model="login">
     </div>
     <div class="input-group-login mt-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Пароль</span>
-        <input type="text" class="form-control flex-grow-0 w-25" aria-label="default input example">
+        <input type="text" class="form-control flex-grow-0 w-25" aria-label="default input example" v-model="password">
     </div>
     <div>
         <button class="btn btn-danger" @click="Authorized">Войти</button>
@@ -17,16 +17,28 @@
 </template>
     
 <script>
+import store from "@/store/index";
 export default {
-    methods: {
-         Authorized() {
-            this.$router.push('/Client/Main');
-        },
-
-        Registration() {
-            this.$router.push('/Account/Register')
-        }
+  data() {
+    return {
+      login: '',
+      password: '',
     }
+  },
+  methods: {
+    Authorized() {
+      if (this.login == 'Alex36rus' && this.password == '123123') {
+        store.dispatch('ACCOUNT_LOGIN');
+        this.$router.push('/Client/Main');
+        console.log(store.getters.isAuthenticated);
+      }
+      
+    },
+
+    Registration() {
+        this.$router.push('/Account/Register')
+    }
+  }
 }
 </script>
     

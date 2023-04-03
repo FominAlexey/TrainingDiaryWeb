@@ -1,18 +1,19 @@
+import axios from "axios";
+
 export default {
+  async get(url) {
+    return axios.get(url);
+  },
 
-    async get(url) {
-        return this.axios.get(url);
-    },
+  async post(url, body) {
+    return axios.post(url, body);
+  },
 
-    async post(url, body) {
-        return this.axios.post(url, body);
-    },
+  async put(url, body) {
+    return axios.put(url, body);
+  },
 
-    async put(url, body) {
-        return this.axios.put(url, body);
-    },
-
-    async delete(url) {
-        return this.axios.delete(url);
-    },
+  async delete(url) {
+    return axios.delete(url);
+  },
 };

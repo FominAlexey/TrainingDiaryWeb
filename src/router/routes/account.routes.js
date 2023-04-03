@@ -1,3 +1,5 @@
+import store from '/src/store/index.js'
+
 import AllRoutes from "./all.routes"
 import Login from "/src/views/account/AccountLogin.vue"
 import Register from "/src/views/account/AccountRegistration.vue"
@@ -8,7 +10,13 @@ import LoginLayout from "/src/layouts/loginLayout.vue"
 
 const ifNotAuthenticated = (to, from, next) => {
 
-    next();
+  console.log(store.getters.isAuthenticated)
+  
+  if (!store.getters.isAuthenticated) {
+    next()
+  }
+
+  next('/Client/Main')
 
 }
 

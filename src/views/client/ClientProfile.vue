@@ -47,12 +47,14 @@
 </template>
     
 <script>
+import store from "@/store/index";
 export default {
-    methods: {
-        signOut() {
-            this.$router.push('/')
-        }
+  methods: {
+  signOut() {
+      store.dispatch('ACCOUNT_LOGOUT');   
+      this.$router.push('/');
     }
+  }
 }
 </script>
     

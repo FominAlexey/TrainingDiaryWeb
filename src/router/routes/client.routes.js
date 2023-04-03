@@ -13,12 +13,12 @@ import ClientLayout from '/src/layouts/clientLayout.vue'
 
 const ifAuthenticated = (to, from, next) => {
 
-    if (store.getters.isAuthenticated) {
-        next()
-        return
-    }
+  if (store.getters.isAuthenticated) {
+    next()
+    return
+  }
 
-    next('/Account/Login')
+  next('/Account/Login')
 }
 
 export default [

@@ -1,18 +1,34 @@
 <template> 
     <div id="center-client-exercise">
-        <div class="display-6">Подтягивания</div>
+        <div class="display-6">{{ items?.name }}</div>
     </div>
     <p class="text-start ms-4 fs-5">
-        Подтягивания — базовое физическое упражнение, развивающее группы мышц верхней части тела: 
-        широчайшие, бицепсы, брахиалис, предплечья. Выполняется в висе и представляет собой поднятие и 
-        опускание тела с помощью рук.
+        {{ items?.description }}
     </p>
 </template>
     
 <script>
+import ApiService from "@/services/api/api.js"
 export default {
-    methods: {
+  data() {
+    this.getExercise();
+    return {
+      items: null,
     }
+  },
+  methods: {
+    getExercise() {
+      if (this.$route.query.ExerciseId == 1) {
+        ApiService.Exercises.GetExercisePullUps().then(response => {
+          this.items = response.data;
+        })
+      } else {
+        ApiService.Exercises.GetExercisesSquats().then(response => {
+          this.items = response.data;
+        })
+      }
+    },
+  }
 }
 </script>
     

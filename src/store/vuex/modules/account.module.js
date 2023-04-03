@@ -1,29 +1,33 @@
-import { ACCOUNT_LOGIN } from "../actions/account/actions.type"
-import { SET_TOKEN } from "../mutations/account/mutations.type"
+import { ACCOUNT_LOGIN, ACCOUNT_LOGOUT } from "../actions/account/actions.type"
+import { SET_TOKEN, CLEAR_ACCOUNT } from "../mutations/account/mutations.type"
 
 const state = {
-    isAuthorize: true
+    isAuthorize: false
 }
 
 const getters = {
-    isAuthenticated(state) {
-        return state.isAuthorize;
-    }
+  isAuthenticated(state) {
+    return state.isAuthorize;
+  }
 }
 
 const actions = {
-    [ACCOUNT_LOGIN](context, loginDto) {
-
-        return new Promise((resolve, reject) => {
-
-        });        
-    }
+  [ACCOUNT_LOGIN](context, loginDto) {
+    context.commit(SET_TOKEN)
+  },
+  
+  [ACCOUNT_LOGOUT](context, loginDto) {
+    context.commit(SET_TOKEN)
+  }
 }
 
 const mutations = {
-    [SET_TOKEN](state, user) {
-        state.isAuthorize = true;
-    },
+  [SET_TOKEN](state, user) {
+    state.isAuthorize = true;
+  },
+  [CLEAR_ACCOUNT](state) {
+    state.isAuthorize = false;
+  }
 }
 
 export default {

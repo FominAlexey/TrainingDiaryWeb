@@ -1,7 +1,7 @@
 <template> 
     <div id="center-client-training">
-        <div class="display-6">17.09.2023</div>
-        <div class="display-6">Бег 3 км + Подтягивания</div>
+        <div class="display-6">{{ items?.date }}</div>
+        <div class="display-6">{{ items?.name }}</div>
     </div>
     <table class="table mt-4">
         <thead>
@@ -13,25 +13,39 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Бег 3 км</td>
-                <td>-</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Подтягивания</td>
-                <td>15</td>
-                <td>Максимум</td>
+            <tr v-for="(item, index) in items?.exercises" :key="index">
+                <th scope="row">{{ index }}</th>
+                <td>{{ item.nameWorkout }}</td>
+                <td>{{ item.count }}</td>
+                <td>{{ item.timeWorkout }}</td>
             </tr>
         </tbody>
     </table>  
 </template>
     
 <script>
+import ApiService from "@/services/api/api.js"
 export default {
-    methods: {}
+  data() {
+    this.getTraining();
+    return {
+      items: null,
+    }
+  },
+
+  methods: {
+    getTraining() {
+      if (this.$route.query.id == 1) {
+        ApiService.Training.GetTrainingBoxing().then(response => {
+          this.items = response.data;
+        })
+      } else {
+        ApiService.Training.GetTrainingGym().then(response => {
+          this.items = response.data;
+        })
+      }
+    }
+  }
 }
 </script>
     
