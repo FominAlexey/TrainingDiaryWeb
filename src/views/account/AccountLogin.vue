@@ -6,7 +6,7 @@
     </div>
     <div class="input-group-login mt-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Пароль</span>
-        <input type="text" class="form-control flex-grow-0 w-25" aria-label="default input example" v-model="password">
+        <input type="password" class="form-control flex-grow-0 w-25" aria-label="default input example" v-model="password">
     </div>
     <div>
         <button class="btn btn-danger" @click="Authorized">Войти</button>
