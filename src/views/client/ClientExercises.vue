@@ -1,5 +1,8 @@
 <template> 
-    <div id="center-client-exercises">
+    <div v-if="isLoading" id="center-client-exercises" >
+      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"></div>  
+    </div>
+    <div v-else v-show="!isLoading" id="center-client-exercises">
         <div class="display-6">Упражнения</div>
     </div>
     <div class="input-group mt-3 ms-2" v-for="item in items?.listExercises" :key="item.id">
@@ -10,16 +13,19 @@
 <script>
 import ApiService from "@/services/api/api.js"
 export default {
-   data() {
+  data() {
     this.getListExercises();
     return {
       items: null,
+      isLoading: true,
     }
   },
   methods: {
     getListExercises() {
+      this.isLoading = true;
       ApiService.Exercises.GetAllExercises().then(response => {
         this.items = response.data;
+        this.isLoading = false;
       })
     },
     outExercise(id) {

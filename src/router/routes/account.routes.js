@@ -10,7 +10,9 @@ import LoginLayout from "/src/layouts/loginLayout.vue"
 
 const ifNotAuthenticated = (to, from, next) => {
 
-  console.log(store.getters.isAuthenticated)
+  if (localStorage.getItem("vuex")) {
+    store.dispatch("INIT_ACCOUNT_VUEX");
+  }
   
   if (!store.getters.isAuthenticated) {
     next()

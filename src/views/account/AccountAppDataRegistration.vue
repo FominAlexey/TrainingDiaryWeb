@@ -33,12 +33,14 @@
 </template>
     
 <script>
+import store from "@/store/index";
 export default {
-    methods: {
-        endRegistration() {
-            this.$router.push('/Client/Main')
-        }
+  methods: {
+    endRegistration() {
+      store.dispatch('ACCOUNT_LOGIN');
+      this.$router.push('/Client/Main')
     }
+  }
 }
 </script>
     

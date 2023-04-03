@@ -24,5 +24,14 @@ export default {
     GetExercisesSquats() {
       return ApiBase.get(ApiUrls.Exercises.GetExercisesSquats);
     },
+  },
+
+  Account: {
+    GetAccount() {
+      return ApiBase.get(ApiUrls.Account.GetAccount);
+    },
+    GetStatistics() {
+      return ApiBase.get(ApiUrls.Account.GetStatistics);
+    }
   }
 }

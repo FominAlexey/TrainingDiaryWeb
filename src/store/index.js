@@ -2,10 +2,26 @@ import Vuex from 'vuex'
 
 import AccountModule from './vuex/modules/account.module'
 
+import createPersistedState from "vuex-persistedstate"
+
 const store = new Vuex.Store({
     modules: {
         AccountModule,
-    }
+  },
+  plugins: [
+    createPersistedState({
+      storage: window.localStorage,
+      reducer: (vuexState) => {
+        return {
+          store: {
+            AccountModule: {
+              isAuthorize: vuexState.AccountModule.isAuthorize,
+            },
+          },
+        };
+      },
+    }),
+  ],
 })
 
 export default store

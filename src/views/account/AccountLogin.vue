@@ -30,7 +30,6 @@ export default {
       if (this.login == 'Alex36rus' && this.password == '123123') {
         store.dispatch('ACCOUNT_LOGIN');
         this.$router.push('/Client/Main');
-        console.log(store.getters.isAuthenticated);
       }
       
     },

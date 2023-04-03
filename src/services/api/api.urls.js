@@ -1,15 +1,20 @@
-const BASE_URL = 'https://run.mocky.io/v3/'
+const BASE_URL = 'https://functions.yandexcloud.net'
 
 export default {
   Training: {
-    GetListTraining: BASE_URL + '3115f905-b32d-44f0-9f23-e2c659f48425',
-    GetTrainingBoxing: BASE_URL + '2a6c8b62-a4c4-4b87-bebb-fad6f355fe00',
-    GetTrainingGym: BASE_URL + '6430b18a-5b59-42b7-a9a2-10651cd07b86'
+    GetListTraining: BASE_URL + '/d4evsplmeapjm58mt2j6',
+    GetTrainingBoxing: BASE_URL + '/d4ehn8ao7ojmglc2qf6a',
+    GetTrainingGym: BASE_URL + '/d4e03g99k85ac95qfdf1'
   },
 
   Exercises: {
-    GetListExercises: BASE_URL + '9bf97c51-7576-48f1-a4d4-64b3f632ac32',
-    GetExercisePullUps: BASE_URL + 'a5995497-b6c4-434a-8aa4-558907bf2ecc',
-    GetExercisesSquats: BASE_URL + 'd60f4c54-381b-47d5-ae95-82fb593cb4c5'
+    GetListExercises: BASE_URL + '/d4e6hrl26ic1gcevpd60',
+    GetExercisePullUps: BASE_URL + '/d4ebj0rtsj5en3t2gnke',
+    GetExercisesSquats: BASE_URL + '/d4ee943u97vf0778qlfv'
+  },
+
+  Account: {
+    GetAccount: BASE_URL + '/d4e2m3dm3h44kcsm9sdu',
+    GetStatistics: BASE_URL + '/d4e50omsbkrpcr2p0sfm'
   }
 };
